@@ -65,7 +65,6 @@ window.onload = function() {
                 } else if (direction == "L") {
                     x = w - imgWidth - pos * 5;
                 }
-                console.log(x);
                 y = sineCalc * offset + 100;
                 elem.style.top = y + "px";
                 elem.style.left = x + "px";

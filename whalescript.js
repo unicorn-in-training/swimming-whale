@@ -2,7 +2,7 @@ window.onload = function() {
     var debug = false;
 
     var randomNumber = function() {
-        var number = Math.round(Math.random() * 50);
+        var number = Math.round(Math.random() * 70);
         return number;
     };
 
@@ -26,8 +26,9 @@ window.onload = function() {
         var sineCalc = 0;
         var x = 0;
         var y = 0;
+        var offset = h - 0.7 * h;
         var switchDirection = 0;
-        var offset = randomNumber();
+        var amplitude = randomNumber();
 
         if (direction == "R") {
             elem.innerHTML = '<img src="whale-r.png" id="whale">';
@@ -37,6 +38,9 @@ window.onload = function() {
         }
 
         function frame() {
+            if (y > 197 && y < 203) {
+                amplitude = randomNumber();
+            }
             if (debug) {
                 debugOutput = debugOutput + "x: " + x + "px, ";
                 debugText.innerHTML = debugOutput;
@@ -61,11 +65,11 @@ window.onload = function() {
                 pos++;
                 sineCalc = Math.sin(pos * 0.08);
                 if (direction == "R") {
-                    x = pos * 5;
+                    x = pos * 8;
                 } else if (direction == "L") {
                     x = w - imgWidth - pos * 5;
                 }
-                y = sineCalc * offset + 100;
+                y = sineCalc * amplitude + offset;
                 elem.style.top = y + "px";
                 elem.style.left = x + "px";
             }

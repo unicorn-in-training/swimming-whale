@@ -44,7 +44,7 @@ window.onload = function() {
             if (direction == "R") {
                 switchDirection = x + imgWidth >= w;
             } else if (direction == "L") {
-                switchDirection = x <= imgWidth;
+                switchDirection = x <= 0;
             }
 
             if (switchDirection) {
@@ -65,6 +65,7 @@ window.onload = function() {
                 } else if (direction == "L") {
                     x = w - imgWidth - pos * 5;
                 }
+                console.log(x);
                 y = sineCalc * offset + 100;
                 elem.style.top = y + "px";
                 elem.style.left = x + "px";

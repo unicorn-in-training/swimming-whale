@@ -38,7 +38,7 @@ window.onload = function() {
         }
 
         function frame() {
-            if (y > 197 && y < 203) {
+            if (y > offset - 3 && y < offset + 3) {
                 amplitude = randomNumber();
             }
             if (debug) {
